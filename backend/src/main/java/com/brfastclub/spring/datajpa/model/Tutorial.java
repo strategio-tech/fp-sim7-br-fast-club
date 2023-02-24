@@ -1,4 +1,4 @@
-package com.bezkoder.spring.datajpa.model;
+package com.brfastclub.spring.datajpa.model;
 
 import javax.persistence.*;
 

@@ -2,24 +2,43 @@ package com.brfastclub.spring.datajpa.model;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Restaurant {
 
-	@OneToMany(mappedBy = "restaurant")
-	private final List<Review> reviews = new ArrayList<>();
+	// @OneToMany(mappedBy = "restaurant")
+	// private final List<Review> reviews = new ArrayList<>();
 
-	@ManyToOne
-	private Collection collection;
+	// @ManyToOne(fetch = FetchType.EAGER, optional = false)
+	// @JoinColumn(name = "collectionId", nullable = false)
+	// @JsonIgnore
+	// private Collection collection;
+
+	@ManyToMany(fetch = FetchType.LAZY,
+		cascade = {
+			CascadeType.PERSIST,
+			CascadeType.MERGE
+		},
+		mappedBy = "restaurants")
+	@JsonIgnore
+	private Set<Collection> collections = new HashSet<>();
 
     @Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -149,12 +168,12 @@ public class Restaurant {
 		this.description = description;
 	}
 
-	public Collection getCollection(){
-		return collection;
+	public Set<Collection> getCollections(){
+		return collections;
 	}
 
-	public List<Review> getReviews(){
-		return reviews;
-	}
+	// public List<Review> getReviews(){
+	// 	return reviews;
+	// }
 
 }

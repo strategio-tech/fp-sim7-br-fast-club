@@ -1,3 +1,4 @@
+/*
 package com.brfastclub.spring.datajpa.repository;
 
 import com.brfastclub.spring.datajpa.model.Review;
@@ -8,3 +9,4 @@ import org.springframework.stereotype.Repository;
 public interface ReviewRepository extends CrudRepository<Review, Long>{
 
 }
+ */

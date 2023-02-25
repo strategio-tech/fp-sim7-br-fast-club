@@ -1,3 +1,5 @@
+/*
+
 package com.brfastclub.spring.datajpa.model;
 
 import javax.persistence.Column;
@@ -54,3 +56,4 @@ public class Review {
 
 
 }
+*/

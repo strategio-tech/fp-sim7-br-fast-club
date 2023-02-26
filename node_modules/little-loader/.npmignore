@@ -1,0 +1,19 @@
+\.git
+\.hg
+
+\.DS_Store
+\.project
+bower_components
+node_modules
+npm-debug\.log*
+phantomjsdriver\.log
+
+# Build
+coverage
+temp
+
+# NPM
+test
+.eslint*
+.istanbul*
+.travis*

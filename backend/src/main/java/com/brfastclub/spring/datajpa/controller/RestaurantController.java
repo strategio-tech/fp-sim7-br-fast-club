@@ -73,7 +73,7 @@ public class RestaurantController {
         return new ResponseEntity<>(restaurant, HttpStatus.CREATED);
     }
 
-    @GetMapping("/collection/{userId}/restaurants")
+    @GetMapping("/collections/{userId}/restaurants")
     public ResponseEntity<List<Restaurant>> getAllRestaurantsByCollectionUserId(@PathVariable(value = "userId") String userId){
         List<Collection> collections = collectionRepository.findByUserId(userId);
 

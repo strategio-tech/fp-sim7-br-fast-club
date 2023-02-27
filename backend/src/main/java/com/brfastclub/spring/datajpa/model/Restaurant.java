@@ -17,10 +17,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
+@Table(name = "restaurants")
 public class Restaurant {
 
 	// @OneToMany(mappedBy = "restaurant")
@@ -57,10 +59,10 @@ public class Restaurant {
 	private String country;
 
     @Column(name = "lat")
-	private DecimalFormat lat;
+	private String lat;
 
     @Column(name = "lng")
-	private DecimalFormat lng;
+	private String lng;
 
     @Column(name = "name")
 	private String name;
@@ -75,7 +77,7 @@ public class Restaurant {
 
 	}
 
-	public Restaurant(String address, String city, String state, String country, DecimalFormat lat, DecimalFormat lng, String name, String suggester, String description) {
+	public Restaurant(String address, String city, String state, String country, String lat, String lng, String name, String suggester, String description) {
 		this.address = address;
 		this.city = city;
 		this.state = state;
@@ -92,81 +94,78 @@ public class Restaurant {
 		return this.id;
 	}
 
-	public void setId(long id) {
-		this.id = id;
-	}
 
 	public String getAddress() {
 		return this.address;
 	}
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
+	// public void setAddress(String address) {
+	// 	this.address = address;
+	// }
 
 	public String getCity() {
 		return this.city;
 	}
 
-	public void setCity(String city) {
-		this.city = city;
-	}
+	// public void setCity(String city) {
+	// 	this.city = city;
+	// }
 
 	public String getState() {
 		return this.state;
 	}
 
-	public void setState(String state) {
-		this.state = state;
-	}
+	// public void setState(String state) {
+	// 	this.state = state;
+	// }
 
 	public String getCountry() {
 		return this.country;
 	}
 
-	public void setCountry(String country) {
-		this.country = country;
-	}
+	// public void setCountry(String country) {
+	// 	this.country = country;
+	// }
 
-	public DecimalFormat getLat() {
+	public String getLat() {
 		return this.lat;
 	}
 
-	public void setLat(DecimalFormat lat) {
-		this.lat = lat;
-	}
+	// public void setLat(DecimalFormat lat) {
+	// 	this.lat = lat;
+	// }
 
-	public DecimalFormat getLng() {
+	public String getLng() {
 		return this.lng;
 	}
 
-	public void setLng(DecimalFormat lng) {
-		this.lng = lng;
-	}
+	// public void setLng(DecimalFormat lng) {
+	// 	this.lng = lng;
+	// }
 
 	public String getName() {
 		return this.name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
+	// public void setName(String name) {
+	// 	this.name = name;
+	// }
 
 	public String getSuggester() {
 		return this.suggester;
 	}
 
-	public void setSuggester(String suggester) {
-		this.suggester = suggester;
-	}
+	// public void setSuggester(String suggester) {
+	// 	this.suggester = suggester;
+	// }
 
 	public String getDescription() {
 		return this.description;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+	// public void setDescription(String description) {
+	// 	this.description = description;
+	// }
 
 	public Set<Collection> getCollections(){
 		return collections;

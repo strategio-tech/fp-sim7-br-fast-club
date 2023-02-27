@@ -17,11 +17,15 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 // import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.lang.NonNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
+@Table(name="collections")
 public class Collection {
 
     // @OneToMany(mappedBy = "collection")
@@ -35,6 +39,7 @@ public class Collection {
         joinColumns = {@JoinColumn(name = "collectionId")},
         inverseJoinColumns = {@JoinColumn(name = "restaurantId")}
     )
+    @JsonIgnore
     private Set<Restaurant> restaurants = new HashSet<>();
 
     @Id

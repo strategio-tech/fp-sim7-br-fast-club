@@ -2,7 +2,7 @@ Feature: CU Tests
   Users should be able to submit GET and POST with all features, represented by WireMock
 
   Scenario: Testuser creates a new collection
-    When it's the first time user logged in to the system and their collection is created
+    When user logged in to the system and their collection is created now or before
     Then There will be a collection for that user
 
   Scenario: Testuser wants to know whether there's its collection

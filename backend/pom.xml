@@ -61,6 +61,11 @@
 			<artifactId>cucumber-junit</artifactId>
 			<version>6.8.0</version>
 		</dependency>
+		<dependency>
+			<groupId>com.github.tomakehurst</groupId>
+			<artifactId>wiremock</artifactId>
+			<version>2.9.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>

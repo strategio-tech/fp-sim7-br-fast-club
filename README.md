@@ -49,7 +49,7 @@ Then the screen will display the current uploaded restaurant recommendation alon
 - [Carla Pico](https://github.com/carlapico)
 - [Heng Wang](https://github.com/zerotume)
 - [Gian Carlo Sosa](https://github.com/lordSosa15)
-- [Ashcon ](https://github.com/aminoo10)
+- [Ashcon Minoo](https://github.com/aminoo10)
 - [Ken](https://github.com/keneversley)
 
 

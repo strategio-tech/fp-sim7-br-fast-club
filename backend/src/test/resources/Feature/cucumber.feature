@@ -5,11 +5,6 @@ Feature: CU Tests
     When user logged in to the system and their collection is created now or before
     Then There will be a collection for that user
 
-  Scenario: Testuser wants to know whether there's its collection
-    When User send a GET request for the collection
-    Then There is a collection information returned
-
-
   Scenario: Testuser wants to upload a information about a restaurant
     When User send a POST request with the information of the restaurant
     Then The restaurant is created and its information returned

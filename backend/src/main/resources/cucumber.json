@@ -1,0 +1,24 @@
+{
+	"testing-framework": "cucumber",
+	"userId": "testCukeUser",
+	"address":"Meow St222222",
+	"city":"Meow",
+	"state":"MW",
+	"country":"United Cats",
+	"lat":"1.1111111",
+	"lng":"2.2222222",
+	"name":"Catnips",
+	"suggester":"Meow one",
+	"description":"a good place for cats to enjoy catnips",
+	"supported-language":
+	[
+		"Ruby",
+		"Java",
+		"Javascript",
+		"PHP",
+		"Python",
+		"C++"
+	],
+
+	"website": "cucumber.io"
+}

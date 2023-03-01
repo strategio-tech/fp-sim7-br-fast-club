@@ -31,8 +31,7 @@ Then the screen will display the current uploaded restaurant recommendation alon
 
 
 ## Wireframe
-
-![techtastewireframe](https://user-images.githubusercontent.com/109123427/222259334-698cffbc-d0f7-4184-acfa-c5c69cc7db83.png)
+[Link to Wireframe](https://www.figma.com/file/wIUHr0xHIN292Uj0FVYe2M/Tech-Taste-Wireframe?node-id=0%3A1&t=DPxkyA3d9HCZuD0Q-1)
 
 
 ## Solution Architecture
@@ -57,4 +56,4 @@ Then the screen will display the current uploaded restaurant recommendation alon
 
 ## Presentation
 
-[Link to Presentation](https://github.com/matiassingers/awesome-readme)
+[Link to Presentation](https://docs.google.com/presentation/d/1M4QWfnGM5gsvgf70WO7kZJXaZERkIGSC/edit?usp=sharing&ouid=115677951503615423815&rtpof=true&sd=true)

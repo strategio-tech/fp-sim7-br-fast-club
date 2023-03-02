@@ -26,6 +26,9 @@ const Header = ({ onPlaceChanged, onLoad }) => {
           <Typography variant="h6" className={classes.title}>
             Add Restaurant
           </Typography>
+          <Typography variant="h6" className={classes.title}>
+            Logout
+          </Typography>
         </Box>
       </Toolbar>
           {/* <Autocomplete onLoad={onLoad} onPlaceChanged={onPlaceChanged}> */}

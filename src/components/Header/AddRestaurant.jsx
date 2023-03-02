@@ -22,6 +22,11 @@ export default function AddRestaurant () {
 
                 <div class="inputBox">
                     <input type="text" required="required"/>
+                    <span>Search Restaurant</span>
+                </div>
+
+                <div class="inputBox">
+                    <input type="text" required="required"/>
                     <span>Description</span>
                 </div>
         

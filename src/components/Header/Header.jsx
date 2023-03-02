@@ -14,7 +14,7 @@ const Header = ({ onPlaceChanged, onLoad }) => {
       <Toolbar className={classes.toolbar}>
         <Typography variant="h5" className={classes.title}>
           (add image here) Tech Taste
-          {/* <img src='../'></img> */}
+          {/* <img src='../../whitelogotransparentbkgd.png'></img> */}
         </Typography>
         <Box display="flex">
           <Typography variant="h6" className={classes.title}>

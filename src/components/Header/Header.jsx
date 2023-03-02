@@ -10,10 +10,10 @@ const Header = ({ onPlaceChanged, onLoad }) => {
   const classes = useStyles();
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" className={classes.appbar}>
       <Toolbar className={classes.toolbar}>
         <Typography variant="h5" className={classes.title}>
-          Tech Taste
+          (add image here) Tech Taste
           {/* <img src='../'></img> */}
         </Typography>
         <Box display="flex">
@@ -29,7 +29,7 @@ const Header = ({ onPlaceChanged, onLoad }) => {
         </Box>
       </Toolbar>
           {/* <Autocomplete onLoad={onLoad} onPlaceChanged={onPlaceChanged}> */}
-            <div className={classes.search}>
+            <div className={classes.search} >
               <div className={classes.searchIcon}>
                 <SearchIcon />
               </div>

@@ -26,6 +26,8 @@ const Header = ({ onPlaceChanged, onLoad }) => {
           <Typography variant="h6" className={classes.title}>
             Add Restaurant
           </Typography>
+        </Box>
+      </Toolbar>
           {/* <Autocomplete onLoad={onLoad} onPlaceChanged={onPlaceChanged}> */}
             <div className={classes.search}>
               <div className={classes.searchIcon}>
@@ -34,8 +36,6 @@ const Header = ({ onPlaceChanged, onLoad }) => {
               <InputBase placeholder="Search…" classes={{ root: classes.inputRoot, input: classes.inputInput }} />
             </div>
           {/* </Autocomplete> */}
-        </Box>
-      </Toolbar>
     </AppBar>
   );
 };

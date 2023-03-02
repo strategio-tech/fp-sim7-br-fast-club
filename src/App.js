@@ -8,6 +8,9 @@ import Map from "./components/Map/Map.jsx";
 // import { ClassNames } from "@emotion/react";
 import useStyles from './appStyles.js';
 
+import location from './data/location.json';
+// import restaurants from './data/restaurants.json';
+
 
 const App = () => {
   const [type, setType] = useState("restaurants");
@@ -26,11 +29,12 @@ const App = () => {
   const classes = useStyles();
 
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition(
-      ({ coords: { latitude, longitude } }) => {
-        setCoords({ lat: latitude, lng: longitude });
-      }
-    );
+    // navigator.geolocation.getCurrentPosition(
+    //   ({ coords: { latitude, longitude } }) => {
+    //     setCoords({ lat: latitude, lng: longitude });
+    //   }
+    // );
+    setCoords({lat:location.google_map.center_lat, lng:location.google_map.center_lng});
   }, []);
 
   useEffect(() => {

@@ -254,14 +254,14 @@ a:link {
     transition: 0.5s
 };
 
-.inputBox:nth-child(2) input:valid ~ span, 
+.inputBox:nth-child(2) input:valid ~ span,
 .inputBox:nth-child(2) input:focus ~ span {
     background: #1e1e1e;
     color:#F0EFEB;
     border-radius: 2px;
 };
 
-.inputBox input:valid ~ span, 
+.inputBox input:valid ~ span,
 .inputBox input:focus ~ span {
     color: #1e1e1e;
     transform: translateX(10px) translateY(-7px);
@@ -273,7 +273,45 @@ a:link {
     letter-spacing: 0.2em;
 };
 
-.inputBox input:valid, 
+.inputBox input:valid,
 .inputBox input:focus  {
     border: 1px solid #1e1e1e;
 };
+
+input.rest-search:focus{
+  outline:none;
+}
+
+.dataResult {
+  margin-top: 5px;
+  width: 300px;
+  height: 200px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.dataResult::-webkit-scrollbar {
+  display: none;
+}
+
+.dataResult .dataItem {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  color: black;
+}
+
+.dataItem p {
+  margin-left: 10px;
+}
+
+.dataItem{
+  text-decoration: none;
+}
+
+.dataItem:hover{
+  background-color: lightgrey;
+}

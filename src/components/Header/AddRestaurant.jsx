@@ -1,6 +1,48 @@
 import "./addrestaurant.css"
+import restaurants_data from '../../data/restaurants.json';
+import { useState } from "react";
+// import {writeJsonFile} from 'write-json-file';
+
 
 export default function AddRestaurant () {
+
+    let restaurants = restaurants_data.data;
+
+    const [filteredData, setFilteredData] = useState([]);
+    const [wordEntered, setWordEntered] = useState("");
+    const [fullName, setFullName] = useState("");
+    const [description, setDescription] = useState("");
+    const [saving, setSaving] = useState({});
+
+
+    // const fillTheBar = e => {
+
+    // }
+
+    const saveToCollection = () => {
+        // console.log(writeJsonFile);
+        // const fs = window.require('fs');
+        // let rawdata = fs.readFileSync('../../data/collection.json');
+        // console.log(rawdata);
+    }
+
+    const handleFilter = (event) => {
+        setSaving({});
+        const searchWord = event.target.value;
+        setWordEntered(searchWord);
+        const newFilter = restaurants.filter((r) => {
+            // console.log(r.name);
+            if(r.name){
+                return r.name.toLowerCase().includes(searchWord.toLowerCase());
+            }
+        });
+
+        if (searchWord === "") {
+          setFilteredData([]);
+        } else {
+          setFilteredData(newFilter);
+        }
+      };
 
     return (
         <div className="modalBody">
@@ -16,23 +58,36 @@ export default function AddRestaurant () {
 
             <section className="addResForm">
                 <div class="inputBox">
-                    <input type="text" required="required"/>
+                    <input type="text" required="required" value={fullName} onChange={(e) => setFullName(e.target.value)}/>
                     <span>Full Name</span>
                 </div>
 
                 <div class="inputBox">
-                    <input type="text" required="required"/>
+                    <input className="rest-search" type="text" required="required" value={wordEntered} onChange={handleFilter}/>
+                    {filteredData.length != 0 && (
+                        <div className="dataResult">
+                            {filteredData.slice(0,15).map(r => {
+                                return (
+                                    <div className="dataItem" onClick={e => {setWordEntered(r.name); setFilteredData([]); setSaving(r)}}>
+                                        <p>{r.name}</p>
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    )}
                     <span>Search Restaurant</span>
                 </div>
 
                 <div class="inputBox">
-                    <input type="text" required="required"/>
+                    <input type="text" required="required" value={description} onChange={(e) => setDescription(e.target.value)}/>
                     <span>Description</span>
                 </div>
-        
+
             </section>
 
-             <button class="modal__btn">Add &rarr;</button>
+             <button class="modal__btn" disabled={!saving.name || !description || !fullName} style={{cursor:(!saving.name || !description || !fullName)?"not-allowed":"pointer"}} onClick={saveToCollection}>{
+                (!saving.name || !description || !fullName)?"Fill to Add":"Add!"
+             }&rarr;</button>
 
             <a href="#modal-closed" class="link-2"></a>
 

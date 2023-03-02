@@ -27,6 +27,10 @@ const Map = ({ coords, places, setCoords, setBounds, setChildClicked }) => {
         onChange={(e) => {
           setCoords({ lat: e.center.lat, lng: e.center.lng });
           setBounds({ ne: e.marginBounds.ne, sw: e.marginBounds.sw });
+          // console.log(e.center.lat);
+          // console.log(e.center.lng);
+          // console.log(e.marginBounds.ne);
+          // console.log(e.marginBounds.sw);
         }}
         onChildClick={(child) => setChildClicked(child)}
       >

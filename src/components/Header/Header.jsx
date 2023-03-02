@@ -5,6 +5,9 @@ import { AppBar, Toolbar, Typography, InputBase, Box } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
 import useStyles from './styles.js';
 import AddRestaurant from './AddRestaurant';
+import SearchButton from './Search';
+import SavedButton from './Saved.jsx';
+import LogoutButton from './LogoutButton.jsx';
 
 const Header = ({ onPlaceChanged, onLoad }) => {
   const classes = useStyles();
@@ -18,16 +21,16 @@ const Header = ({ onPlaceChanged, onLoad }) => {
         </Typography>
         <Box display="flex">
           <Typography variant="h6" className={classes.title}>
-            Saved 
+            <SavedButton /> 
           </Typography>
           <Typography variant="h6" className={classes.title}>
-            Search
+            <SearchButton />
           </Typography>
           <Typography> 
              <AddRestaurant />
           </Typography>
           <Typography variant="h6" className={classes.title}>
-            Logout
+            <LogoutButton />
           </Typography>
         </Box>
       </Toolbar>

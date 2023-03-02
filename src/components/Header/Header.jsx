@@ -3,8 +3,8 @@ import { Autocomplete } from '@react-google-maps/api';
 
 import { AppBar, Toolbar, Typography, InputBase, Box } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
-
 import useStyles from './styles.js';
+import AddRestaurant from './AddRestaurant';
 
 const Header = ({ onPlaceChanged, onLoad }) => {
   const classes = useStyles();
@@ -23,8 +23,8 @@ const Header = ({ onPlaceChanged, onLoad }) => {
           <Typography variant="h6" className={classes.title}>
             Search
           </Typography>
-          <Typography variant="h6" className={classes.title}>
-            Add Restaurant
+          <Typography> 
+             <AddRestaurant />
           </Typography>
           <Typography variant="h6" className={classes.title}>
             Logout

@@ -50,7 +50,7 @@ Then the screen will display the current uploaded restaurant recommendation alon
 - [Heng Wang](https://github.com/zerotume)
 - [Gian Carlo Sosa](https://github.com/lordSosa15)
 - [Ashcon Minoo](https://github.com/aminoo10)
-- [Ken](https://github.com/keneversley)
+- [Ken Eversley](https://github.com/keneversley)
 
 
 

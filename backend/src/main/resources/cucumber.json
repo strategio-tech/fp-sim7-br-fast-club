@@ -1,6 +1,7 @@
 {
 	"testing-framework": "cucumber",
 	"userId": "testCukeUser",
+	"locationId":"testLocationId",
 	"address":"Meow St222222",
 	"city":"Meow",
 	"state":"MW",

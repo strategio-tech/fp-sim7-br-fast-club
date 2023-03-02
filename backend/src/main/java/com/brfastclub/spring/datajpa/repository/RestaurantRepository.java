@@ -10,4 +10,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface RestaurantRepository extends CrudRepository<Restaurant, Long>{
     List<Restaurant> findRestaurantsByCollectionsId(Long collectionId);
+    List<Restaurant> findRestaurantsByLocationId(String locationId);
 }

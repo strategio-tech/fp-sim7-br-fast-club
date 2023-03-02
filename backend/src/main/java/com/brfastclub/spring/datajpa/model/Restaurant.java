@@ -49,6 +49,9 @@ public class Restaurant {
     @Column(name = "address")
 	private String address;
 
+    @Column(name = "locationId")
+	private String locationId;
+
     @Column(name = "city")
 	private String city;
 
@@ -77,7 +80,8 @@ public class Restaurant {
 
 	}
 
-	public Restaurant(String address, String city, String state, String country, String lat, String lng, String name, String suggester, String description) {
+	public Restaurant(String locationId, String address, String city, String state, String country, String lat, String lng, String name, String suggester, String description) {
+		this.locationId = locationId;
 		this.address = address;
 		this.city = city;
 		this.state = state;
@@ -94,6 +98,10 @@ public class Restaurant {
 		return this.id;
 	}
 
+
+	public String getLocationId() {
+		return this.locationId;
+	}
 
 	public String getAddress() {
 		return this.address;

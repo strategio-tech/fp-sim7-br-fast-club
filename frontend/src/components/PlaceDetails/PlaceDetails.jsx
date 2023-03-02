@@ -4,11 +4,35 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 import PhoneIcon from '@material-ui/icons/Phone';
 import Rating from '@material-ui/lab/Rating';
 
+import { postCollectionData } from '../../api/collectionAPI.js';
+
 import useStyles from './styles.js';
 
-const PlaceDetails = ({ place, selected, refProp }) => {
+const PlaceDetails = ({ place, selected, refProp, saved, setTrigger }) => {
   if (selected) refProp?.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   const classes = useStyles();
+
+  const saveClick = e => {
+    e.preventDefault();
+    let payload = {
+      locationId:place.location_id,
+      address:place.address_obj.street1 + place.address_obj.street2,
+      city:place.address_obj.city,
+      state:place.address_obj.state,
+      country:place.address_obj.country,
+      lat:place.latitude,
+      lng:place.longitude,
+      name:place.name,
+      suggester:"Demo Linton",
+      description:place.ranking?place.ranking:"Looks like a good place!"
+    };
+
+    postCollectionData(payload).then(res => {
+      setTrigger({});
+      e.target.disablled = true;
+    });
+
+  }
 
   return (
     <Card elevation={6}>
@@ -61,6 +85,9 @@ const PlaceDetails = ({ place, selected, refProp }) => {
         </Button>
         <Button size="small" color="primary" onClick={() => window.open(place.website, '_blank')}>
           Website
+        </Button>
+        <Button size="small" color={saved?"secondary":"primary"} onClick={(e) => saveClick(e)} disabled={saved}>
+          {saved?"♥Saved!":"♥Save"}
         </Button>
       </CardActions>
     </Card>

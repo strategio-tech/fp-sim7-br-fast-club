@@ -5,6 +5,9 @@ import { getPlacesData } from "./api/travelAdvisorAPI";
 import Header from "./components/Header/Header.jsx";
 import List from "./components/List/List.jsx";
 import Map from "./components/Map/Map.jsx";
+// import { ClassNames } from "@emotion/react";
+import useStyles from './appStyles.js';
+
 
 const App = () => {
   const [type, setType] = useState("restaurants");
@@ -19,6 +22,8 @@ const App = () => {
   const [autocomplete, setAutocomplete] = useState(null);
   const [childClicked, setChildClicked] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+
+  const classes = useStyles();
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
@@ -60,7 +65,7 @@ const App = () => {
     <>
       <CssBaseline />
       <Header onPlaceChanged={onPlaceChanged} onLoad={onLoad} />
-      <Grid container spacing={3} style={{ width: "100%" }}>
+      <Grid container spacing={3} style={{ width: "100%" }} className={classes.listmap}>
         <Grid item xs={12} md={4}>
           <List
             isLoading={isLoading}

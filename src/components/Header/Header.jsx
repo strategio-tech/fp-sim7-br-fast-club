@@ -18,7 +18,13 @@ const Header = ({ onPlaceChanged, onLoad }) => {
         </Typography>
         <Box display="flex">
           <Typography variant="h6" className={classes.title}>
-            Explore new places
+            Saved 
+          </Typography>
+          <Typography variant="h6" className={classes.title}>
+            Search
+          </Typography>
+          <Typography variant="h6" className={classes.title}>
+            Add Restaurant
           </Typography>
           {/* <Autocomplete onLoad={onLoad} onPlaceChanged={onPlaceChanged}> */}
             <div className={classes.search}>

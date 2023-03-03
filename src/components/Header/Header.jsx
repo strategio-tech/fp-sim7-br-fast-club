@@ -8,6 +8,8 @@ import AddRestaurant from './AddRestaurant';
 import SearchButton from './Search';
 import SavedButton from './Saved.jsx';
 import LogoutButton from './LogoutButton.jsx';
+import icon from '../../assets/whitelogotransparentbkgd.png';
+import accIcon from '../../assets/A.png';
 
 const Header = ({ onPlaceChanged, onLoad }) => {
   const classes = useStyles();
@@ -16,8 +18,9 @@ const Header = ({ onPlaceChanged, onLoad }) => {
     <AppBar position="static" className={classes.appbar}>
       <Toolbar className={classes.toolbar}>
         <Typography variant="h5" className={classes.title}>
-          (add image here) Tech Taste
-          {/* <img src='../../whitelogotransparentbkgd.png'></img> */}
+          {/* (add image here) Tech Taste */}
+          <img src={icon} alt="Icon" className={classes.tticon}/>
+          {/* <span>Tech Taste</span> */}
         </Typography>
         <Box display="flex">
           {/* <Typography variant="h6" className={classes.title}>
@@ -30,7 +33,7 @@ const Header = ({ onPlaceChanged, onLoad }) => {
              <AddRestaurant />
           </Typography>
           <Typography variant="h6" className={classes.title}>
-            Ashcon 
+            <img src={accIcon} alt="Account Icon" className={classes.accicon}/>
           </Typography>
           {/* <Typography variant="h6" className={classes.title}>
             <LogoutButton />

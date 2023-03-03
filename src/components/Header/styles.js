@@ -10,6 +10,8 @@ export default makeStyles((theme) => ({
 
   appbar: {
     backgroundColor: '#D22779',
+    position: 'sticky',
+    top: '0',
   },
 
   search: {
@@ -19,6 +21,7 @@ export default makeStyles((theme) => ({
     '&:hover': { backgroundColor: 'rgba(255, 255, 255, 0.54)'},
     marginRight: theme.spacing(2),
     marginLeft: 0,
+    marginBottom: '5px',
     width: '100%',
     [theme.breakpoints.up('sm')]: { marginLeft: theme.spacing(3), width: 'auto' },
   },
@@ -45,5 +48,14 @@ export default makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'space-between',
     backgroundColor: '#D22779',
+  },
+
+  tticon: {
+    width: '13rem', 
+    height: '13rem',
+  },
+  accicon: {
+    width: '6rem', 
+    height: '6rem',
   },
 }));

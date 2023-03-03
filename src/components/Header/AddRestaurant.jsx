@@ -7,6 +7,7 @@ import { useState } from "react";
 export default function AddRestaurant () {
 
     let restaurants = restaurants_data.data;
+    // const history = useHist
 
     const [filteredData, setFilteredData] = useState([]);
     const [wordEntered, setWordEntered] = useState("");
@@ -20,6 +21,12 @@ export default function AddRestaurant () {
     // }
 
     const saveToCollection = () => {
+        setFullName("");
+        setDescription("");
+        setSaving({});
+        setWordEntered("");
+        window.location.href="#modal-closed";
+        // history.push()
         // console.log(writeJsonFile);
         // const fs = window.require('fs');
         // let rawdata = fs.readFileSync('../../data/collection.json');

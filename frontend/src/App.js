@@ -5,6 +5,12 @@ import { getPlacesData } from "./api/travelAdvisorAPI";
 import Header from "./components/Header/Header.jsx";
 import List from "./components/List/List.jsx";
 import Map from "./components/Map/Map.jsx";
+// import { ClassNames } from "@emotion/react";
+import useStyles from './appStyles.js';
+
+import location from './data/location.json';
+// import restaurants from './data/restaurants.json';
+
 
 const App = () => {
   const [type, setType] = useState("restaurants");
@@ -20,12 +26,15 @@ const App = () => {
   const [childClicked, setChildClicked] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
+  const classes = useStyles();
+
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition(
-      ({ coords: { latitude, longitude } }) => {
-        setCoords({ lat: latitude, lng: longitude });
-      }
-    );
+    // navigator.geolocation.getCurrentPosition(
+    //   ({ coords: { latitude, longitude } }) => {
+    //     setCoords({ lat: latitude, lng: longitude });
+    //   }
+    // );
+    setCoords({lat:location.google_map.center_lat, lng:location.google_map.center_lng});
   }, []);
 
   useEffect(() => {
@@ -60,7 +69,7 @@ const App = () => {
     <>
       <CssBaseline />
       <Header onPlaceChanged={onPlaceChanged} onLoad={onLoad} />
-      <Grid container spacing={3} style={{ width: "100%" }}>
+      <Grid container spacing={3} style={{ width: "100%" }} className={classes.listmap}>
         <Grid item xs={12} md={4}>
           <List
             isLoading={isLoading}

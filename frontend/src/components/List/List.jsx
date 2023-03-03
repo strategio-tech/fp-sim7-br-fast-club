@@ -1,34 +1,20 @@
 import React, { useState, useEffect, createRef } from 'react';
 import { CircularProgress, Grid, Typography, InputLabel, MenuItem, FormControl, Select } from '@material-ui/core';
 
-import { getCollectionData } from '../../api/collectionAPI';
 import PlaceDetails from '../PlaceDetails/PlaceDetails';
 import useStyles from './styles.js';
 
 const List = ({ places, type, setType, rating, setRating, childClicked, isLoading }) => {
   const [elRefs, setElRefs] = useState([]);
-  const [collections, setCollections] = useState([]);
-  const [restaurantIds, setRestaurantIds] = useState([]);
-  const [trigger, setTrigger] = useState({});
   const classes = useStyles();
 
   useEffect(() => {
     setElRefs((refs) => Array(places.length).fill().map((_, i) => refs[i] || createRef()));
   }, [places]);
 
-  useEffect(() => {
-    console.log(collections);
-    getCollectionData().then((data) => {
-      if(data)setCollections(data);
-      // setRestaurantIds(data.map(d => {
-      //   return d.restaurantId;
-      // }));
-    });
-  }, [collections])
-
   return (
     <div className={classes.container}>
-      <Typography variant="h4">Food & Dining around you</Typography>
+      <Typography variant="h4">Restaurants Near Me</Typography>
       {isLoading ? (
         <div className={classes.loading}>
           <CircularProgress size="5rem" />
@@ -54,7 +40,7 @@ const List = ({ places, type, setType, rating, setRating, childClicked, isLoadin
           <Grid container spacing={3} className={classes.list}>
             {places?.map((place, i) => (
               <Grid ref={elRefs[i]} key={i} item xs={12}>
-                <PlaceDetails selected={Number(childClicked) === i} refProp={elRefs[i]} place={place} setTrigger={setTrigger} saved={collections.some(e => e.locationId === place.location_id)} />
+                <PlaceDetails selected={Number(childClicked) === i} refProp={elRefs[i]} place={place} />
               </Grid>
             ))}
           </Grid>

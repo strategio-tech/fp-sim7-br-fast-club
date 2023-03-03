@@ -1,0 +1,23 @@
+{
+    "trip_advisor":{
+        "url":"https://travel-advisor.p.rapidapi.com/restaurants/list-in-boundary?bl_latitude=26.173017779652525&bl_longitude=-80.17826634087042&tr_longitude=-80.11483746208624&tr_latitude=26.232469873037743",
+        "bl_latitude":"26.173017779652525",
+        "bl_longitude":"-80.17826634087042",
+        "tr_longitude":"-80.11483746208624",
+        "tr_latitude":"26.232469873037743"
+    },
+    "google_map":{
+        "center_lat":26.202747621182624,
+        "center_lng":-80.14655190147833,
+        "marginBounds_ne":{
+            "lat":26.232469873037743,
+            "lng":-80.11483746208624
+        },
+        "marginBounds_sw":{
+            "lat":26.173017779652525,
+            "lng":80.17826634087042
+        }
+    }
+
+
+}

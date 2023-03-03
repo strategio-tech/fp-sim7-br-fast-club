@@ -20,18 +20,21 @@ const Header = ({ onPlaceChanged, onLoad }) => {
           {/* <img src='../../whitelogotransparentbkgd.png'></img> */}
         </Typography>
         <Box display="flex">
-          <Typography variant="h6" className={classes.title}>
+          {/* <Typography variant="h6" className={classes.title}>
             <SavedButton /> 
           </Typography>
           <Typography variant="h6" className={classes.title}>
             <SearchButton />
-          </Typography>
+          </Typography> */}
           <Typography> 
              <AddRestaurant />
           </Typography>
           <Typography variant="h6" className={classes.title}>
-            <LogoutButton />
+            Ashcon 
           </Typography>
+          {/* <Typography variant="h6" className={classes.title}>
+            <LogoutButton />
+          </Typography> */}
         </Box>
       </Toolbar>
           {/* <Autocomplete onLoad={onLoad} onPlaceChanged={onPlaceChanged}> */}
